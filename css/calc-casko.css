@@ -1,0 +1,828 @@
+@charset "UTF-8";
+
+#price-slider {
+	width: 350px;
+	margin-bottom: 10px;
+}
+
+.ui-slider {
+	position: relative;
+}
+
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 20px;
+    border:none!important;
+	
+	height: 21px;
+	
+	background: url(/casco_form/img/slider-button.png) no-repeat center;;
+    border-radius: 50%;
+	
+	cursor: pointer;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	overflow: hidden;
+}
+
+.ui-slider-horizontal {
+	height: 4px;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+	top: -9px;
+	margin-left: -12px;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+
+.ui-widget-content {
+	border-top: 2px solid #b5b5b5;
+	background: #d3d3d3;
+}
+
+.ui-widget-header {
+	border-top: 2px solid #b5b5b5;
+	background: #d3d3d3;
+}
+
+input[type="text"] {
+	color: #555;
+	font-weight: bold !important;
+}
+input[type="text"]:-moz-placeholder {
+	color: #777;
+	font-weight: normal !important;
+}
+input[type="text"]::-moz-placeholder {
+	color: #777;
+	font-weight: normal !important;
+}
+input[type="text"]:-ms-input-placeholder {
+	color: #777;
+	font-weight: normal !important;
+}
+input[type="text"]::-webkit-input-placeholder {
+	color: #777;
+	font-weight: normal !important;
+}
+#container {
+	width: 768px;
+}
+p#tit {
+	color: #781496;
+	font-size: 20px;
+	text-align: left;
+	margin-top: 20px;
+}
+label {
+	color: #252525;
+	display: block;
+	font-weight: normal;
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+#casco, #avtocredit, #imushestvo, #osago, #creditstory {
+	text-align: left;
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+}
+#casco > div, #avtocredit > div, #imushestvo > div, #osago > div, #creditstory > div {
+	display: inline-block;
+	margin: 0;
+	width: 100%;
+	max-width: 800px;
+	margin-bottom: 20px;
+	background: transparent;
+	padding: 30px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#casco > div #casco_form, #casco > div #avtocredit_form, #casco > div #imushestvo_form, #casco > div #osaga_form, #casco > div #creditstory_form, #avtocredit > div #casco_form, #avtocredit > div #avtocredit_form, #avtocredit > div #imushestvo_form, #avtocredit > div #osaga_form, #avtocredit > div #creditstory_form, #imushestvo > div #casco_form, #imushestvo > div #avtocredit_form, #imushestvo > div #imushestvo_form, #imushestvo > div #osaga_form, #imushestvo > div #creditstory_form, #osago > div #casco_form, #osago > div #avtocredit_form, #osago > div #imushestvo_form, #osago > div #osaga_form, #osago > div #creditstory_form, #creditstory > div #casco_form, #creditstory > div #avtocredit_form, #creditstory > div #imushestvo_form, #creditstory > div #osaga_form, #creditstory > div #creditstory_form {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	width: 100%;
+}
+.frow {
+	text-align: left;
+}
+.full_width {
+	width: 100%;
+}
+.box {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+.separator {
+	border-bottom: #e6e6e6 solid 1px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.bt {
+	margin-right: 25px;
+}
+*:focus {
+	outline: 0;
+}
+.has-dropdown {
+	padding-right: 27px !important;
+}
+.wrap {
+	border: 1px #b4b4b4 solid;
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	height: 37px;
+	position: relative;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: middle;
+}
+.wrap input[type="text"].i {
+	padding: 0 0 0 10px !important;
+	display: inline-block;
+	vertical-align: middle;
+	height: 21px;
+	border: none !important;
+	color: #000 !important;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.wrap:before {
+	content: "";
+	height: 35px;
+	width: 0px;
+	margin-left: -3px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.wrap .but {
+	display: inline-block;
+	right: 3px;
+	top: 3px;
+	position: absolute;
+	width: 24px;
+	height: 27px;
+	text-align: center;
+	background: url(/casco_form/img/tri_down.png) no-repeat center;
+	cursor: pointer;
+	z-index: 100;
+}
+.wrap input:read-only {
+	cursor: pointer !important;
+	padding-right: 35px !important;
+}
+.combo-box {
+	position: absolute;
+	width: 100%;
+	height: 227px;
+	display: none;
+	top: 34px;
+	left: -1px;
+	border: 1px #b4b4b4 solid;
+	background: #fff;
+	z-index: 1000;
+}
+.combo-box div {
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	margin: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.combo-box div div {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
+}
+.combo-box div div span {
+	display: block;
+	padding: 2px 5px;
+	cursor: pointer;
+	color: #000;
+}
+.combo-box div div span:hover {
+	background: #dfdfdf;
+}
+.combo-box .hid {
+	display: none;
+}
+#tachka-wrap input {
+	width: 232px;
+}
+#god-wrap input {
+	width: 50px;
+}
+#god-wrap .combo-box {
+	height: 130px;
+}
+#moshn-wrap input {
+	width: 260px;
+}
+#moshn-wrap .combo-box {
+	height: 107px;
+}
+#price-wrap {
+	margin-right: 10px;
+}
+#price-wrap input {
+	width: 80px;
+}
+#rub-wrap {
+	display: inline-block;
+	font-weight: bold;
+	color: #000;
+}
+#region-wrap input {
+	width: 230px;
+}
+#name-wrap input {
+	width: 214px;
+}
+#phone-wrap input {
+	width: 214px;
+}
+#email-wrap input {
+	width: 215px;
+}
+#srok-wrap input {
+	width: 70px;
+}
+#srok-wrap .combo-box {
+	height: 165px;
+}
+#type-wrap input {
+	width: 230px;
+}
+#region3-wrap input {
+	width: 230px;
+}
+#period-wrap input {
+	width: 230px;
+}
+#period-wrap .combo-box {
+	height: 203px;
+}
+#ispolz-wrap input {
+	width: 230px;
+}
+#ispolz-wrap .combo-box {
+	height: 250px;
+}
+form input[type=submit].submit-button {
+	text-align: center;
+	display: inline-block;
+	margin: 20px 0;
+	width: 213px;
+	height: 46px;
+	background: #9a1897;
+	text-decoration: none !important;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+form input[type=submit].submit-button:hover {
+	background: #ad2bd4;
+	color: #fff;
+}
+@media screen and (max-width: 480px) {
+	.w1 {
+		margin-left: 0 !important;
+		margin-top: 30px;
+	}
+	.god_item .radio-box .rname {
+		display: block;
+	}
+	.god_item .radio-box .ml {
+		margin-left: 5px;
+	}
+	#casco > div, #avtocredit > div, #imushestvo > div, #osago > div, #creditstory > div {
+		padding: 15px;
+	}
+}
+@media screen and (max-width: 1199px) {
+	.pol {
+		margin-top: 10px;
+	}
+	.l3 {
+		display: none !important;
+	}
+	#price-slider {
+		width: 210px;
+	}
+	#slider-wrap .shkala {
+		width: 50px !important;
+	}
+	#tachka-wrap {
+		min-width: 200px;
+	}
+	#tachka-wrap input {
+		width: 170px;
+	}
+	#moshn-wrap {
+		min-width: 130px;
+	}
+	#moshn-wrap input {
+		width: 120px;
+	}
+	#region-wrap {
+		min-width: 200px;
+	}
+	#region-wrap input {
+		width: 170px;
+	}
+	#bank-wrap {
+		min-width: 200px;
+	}
+	#bank-wrap input {
+		width: 170px;
+	}
+	#name-wrap {
+		min-width: 200px;
+	}
+	#name-wrap input {
+		width: 170px;
+	}
+	#phone-wrap {
+		min-width: 200px;
+	}
+	#phone-wrap input {
+		width: 170px;
+	}
+	#email-wrap {
+		min-width: 200px;
+	}
+	#email-wrap input {
+		width: 170px;
+	}
+	.vodily .left-wrap {
+		margin-bottom: 10px;
+	}
+	.vodily .right-wrap .box {
+		margin-right: 10px;
+	}
+	#type-wrap {
+		min-width: 200px;
+	}
+	#type-wrap input {
+		width: 170px;
+	}
+	#region3-wrap {
+		min-width: 200px;
+	}
+	#region3-wrap input {
+		width: 170px;
+	}
+	#period-wrap {
+		min-width: 200px;
+	}
+	#period-wrap input {
+		width: 170px;
+	}
+	#ispolz-wrap {
+		min-width: 200px;
+	}
+	#ispolz-wrap input {
+		width: 170px;
+	}
+	.box label {
+		font-size: 12px;
+	}
+	.l1, .l2 {
+		font-size: 12px;
+	}
+}
+@media screen and (min-width: 1200px) {
+	#tachka-wrap .combo-box {
+		width: 100%;
+	}
+	#tachka-wrap .combo-box div div span {
+		display: block;
+	}
+	.pol {
+		margin-top: 0px;
+	}
+	.l3 {
+		display: block;
+	}
+}
+#slider-wrap {
+	margin-top: 25px;
+	padding-left: 0px;
+	position: relative;
+}
+#slider-wrap .shkala {
+	border-right: 1px #b4b4b4 solid;
+	border-left: 1px #b4b4b4 solid;
+	height: 7px;
+	width: 85px;
+	display: inline-block;
+	color: #535353 !important;
+	position: relative;
+}
+#slider-wrap .shkala i {
+	display: block;
+	position: absolute;
+	font-size: 12px;
+	font-style: normal;
+}
+#slider-wrap .shkala + .shkala {
+	border-left: none;
+}
+#slider-wrap .s1 {
+	bottom: -17px;
+	left: -5px;
+}
+#slider-wrap .s2 {
+	bottom: -17px;
+	left: -20px;
+}
+#slider-wrap .s3 {
+	bottom: -17px;
+	left: -22px;
+}
+#slider-wrap .s4 {
+	bottom: -17px;
+	left: -22px;
+}
+#slider-wrap .s5 {
+	bottom: -18px;
+	right: -7px;
+	font-size: 17px !important;
+	font-family: arial;
+}
+#slider-wrap #price-slider {
+	position: absolute;
+	top: -5px;
+}
+.box_credit {
+	position: relative;
+	font-size: 15px;
+}
+.box_credit input[type="checkbox"],
+input.customcheckbox {
+	display: none;
+}
+.box_credit input[type="checkbox"] + label span,
+input.customcheckbox + span:before {
+    content:"";
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	margin: -1px 14px 0 0;
+	vertical-align: middle;
+	background: url(/casco_form/img/check.png) left top no-repeat;
+	cursor: pointer;
+}
+.box_credit input[type="checkbox"]:checked + label span,
+input.customcheckbox:checked + span:before {
+	background: url(/casco_form/img/check_checked.png) top no-repeat;
+}
+.box_credit .left-wrap {
+	display: inline-block;
+	vertical-align: middle !important;
+	height: 39px;
+	width: 320px;
+}
+.box_credit .left-wrap:after {
+	display: inline-block;
+	content: "";
+	height: 39px;
+	vertical-align: middle;
+}
+.box_credit .avto {
+	display: inline-block;
+	padding: 0;
+	line-height: 10px;
+	margin-top: 3px;
+	vertical-align: middle !important;
+	color: #000 !important;
+}
+.box_credit #credit {
+	display: none;
+	vertical-align: middle;
+	color: #535353 !important;
+}
+.box_credit #credit #bank-wrap {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.box_credit #credit .dr_bank_text {
+	line-height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #000 !important;
+}
+.box_credit #credit:after {
+	display: inline-block;
+	content: "";
+	height: 39px;
+	width: 1px;
+	vertical-align: middle;
+}
+#bank-wrap input {
+	width: 190px;
+}
+#vodila-wrap input {
+	width: 90px;
+}
+#vodila-wrap .combo-box {
+	height: 108px;
+}
+.vodily #v1 {
+	display: inline-block;
+}
+.vodily #v2 {
+	display: none;
+}
+.vodily #v3 {
+	display: none;
+}
+.vodily #v4 {
+	display: none;
+}
+.left-wrap {
+	display: inline-block;
+	vertical-align: top;
+	width: 185px;
+}
+.left-wrap label {
+	margin-bottom: 3px;
+	line-height: 100%;
+}
+.title-line label {
+	display: inline-block;
+	margin-bottom: 0;
+}
+.title-line .l1 {
+	margin-left: 60px;
+}
+.title-line .l2 {
+	margin-left: 42px;
+}
+.title-line .l3 {
+	margin-left: 74px;
+}
+.lv {
+	width: 30px;
+	line-height: 18px;
+	height: 15px;
+}
+.right-wrap {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+}
+.right-wrap .vrow {
+	margin-top: 15px;
+}
+.right-wrap .box {
+	margin-right: 25px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.right-wrap label {
+	display: inline-block;
+	margin-bottom: 0;
+	line-height: 100%;
+}
+.right-wrap .v-v {
+	width: 65px;
+}
+.right-wrap .s-v {
+	width: 65px;
+}
+.right-wrap .pol div {
+	position: relative;
+	
+}
+.right-wrap .pol div input[type="radio"] {
+	display: none;
+}
+.right-wrap .pol div input[type="radio"] + label span {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin: -1px 14px 0 0;
+	vertical-align: middle;
+	background: url(/casco_form/img/radio.png) left top no-repeat;
+	cursor: pointer;
+}
+.right-wrap .pol div input[type="radio"]:checked + label span {
+	background: url(/casco_form/img/radio_selected.png) top no-repeat;
+}
+.right-wrap .pol div label {
+	height: 21px;
+	line-height: 23px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #000;
+}
+.radio-box {
+	position: relative;
+}
+.radio-box input[type="radio"] {
+	display: none;
+}
+.radio-box input[type="radio"] + label span {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin: -1px 14px 0 0;
+	vertical-align: middle;
+	background: url(/casco_form/img/radio.png) left top no-repeat;
+	cursor: pointer;
+}
+.radio-box input[type="radio"]:checked + label span {
+	background: url(/casco_form/img/radio_selected.png) top no-repeat;
+}
+.radio-box label {
+	height: 21px;
+	line-height: 23px;
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #000;
+}
+.ml {
+	margin-left: 10px;
+}
+input[type=submit].submit-button {
+	text-align: center;
+	display: inline-block;
+	margin: 20px 0;
+	width: 213px;
+	height: 46px;
+	background: #9a1897;
+	text-decoration: none !important;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+input[type=submit].submit-button:hover {
+	background: #ad2bd4;
+	color: #fff;
+}
+.error {
+	border: 1px red solid;
+}
+.error-box {
+	display: none;
+	position: absolute;
+	top: -29px;
+	left: 0;
+	text-align: center;
+	width: 195px;
+	font-size: 11px;
+	color: red;
+	border: 1px red solid;
+	background: #fff;
+	z-index: 30;
+}
+.error-box:after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -7px;
+	left: 97px;
+	height: 7px;
+	width: 7px;
+	background: url(/casco_form/img/tri_error.png) no-repeat;
+}
+#tachka-wrap .error-box {
+	left: 30px;
+}
+#phone-wrap .error-box {
+	left: -20px;
+}
+#v-v1 .error-box {
+	left: -77px;
+}
+#v-v2 .error-box {
+	left: -77px;
+}
+#v-v3 .error-box {
+	left: -77px;
+}
+#v-v4 .error-box {
+	left: -77px;
+}
+#s-v1 .error-box {
+	left: -77px;
+}
+#s-v2 .error-box {
+	left: -77px;
+}
+#s-v3 .error-box {
+	left: -77px;
+}
+#s-v4 .error-box {
+	left: -77px;
+}
+#mail_success {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	height: 75px;
+	background: green;
+}
+#mail_success span {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+#mail_success:before {
+	content: "";
+	display: inline-block;
+	height: 70px;
+	width: 0;
+	vertical-align: middle;
+}
+#mail_fail {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	height: 75px;
+	background: red;
+}
+#mail_fail span {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+#mail_fail:before {
+	content: "";
+	display: inline-block;
+	height: 70px;
+	width: 0;
+	vertical-align: middle;
+}
+.deshevle {
+	color: #781496;
+	font-size: 16px;
+}
+.w1 {
+	vertical-align: top;
+	margin-left: 30px;
+}
+.chto {
+	font-size: 16px;
+	color: #781496;
+}
+.w2 {
+	margin-left: -10px;
+}
+.use_osago .left-wrap {
+	width: 295px;
+}
+.use_osago .ml span {
+	margin-right: 5px !important;
+}
+.radio-item {
+	display: inline-block;
+	width: 295px;
+}
+.god_item {
+	margin-bottom: 20px;
+	display: none;
+}
+.businki {
+	display: inline-block;
+}

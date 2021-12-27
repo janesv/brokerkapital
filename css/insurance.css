@@ -1,0 +1,140 @@
+.insurance {
+    background-color: #fff;
+    background-size: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.insurance-title-group {
+    height: 160px;
+    padding: 50px 0 50px 20px;
+}
+.insurance-title-1 {
+    color: #fff;
+
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.insurance-title-2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.insurance-right {
+    height: 248px;
+    padding: 20px 15px;
+}
+
+.insurance-item {
+    position: relative;
+    margin: 20px 0;
+    max-width: 280px;
+    height: 90px;
+    color: #4a4a4a;
+    border: 3px solid #b59e64;
+    display: block;
+    padding: 20px 15px;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.insurance-item:hover {
+    text-decoration: none;
+    color: #4a4a4a;
+}
+.insurance-item:hover .insurance-item-descr {
+   display: block;
+}
+.insurance-item-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 55px;
+}
+.insurance-item-icon #pic-service-38 {
+     width: 47px;
+}
+.insurance-item-icon #pic-service-39 {
+    width: 37px;
+}
+.insurance-item-icon #pic-service-40 {
+    width: 55px;
+}
+.insurance-item-icon #pic-service-42 {
+    width: 51px;
+}
+.insurance-item-icon img {
+    display: block;
+    margin: 0 auto;
+}
+.insurance-item-title {
+    font-family: 'prosto_sansbold';
+    font-size: 15px;
+    margin-left: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
+}
+.insurance-item-descr {
+    font-size: 14px;
+    font-weight: 300;
+    display: none;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #f1f2f4;
+    padding: 20px 40px;
+    text-align: center;
+    line-height: 1.2;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.list  {
+    padding: 0;
+    font-size: 16px;
+    list-style: none;
+}
+.list li {
+    position: relative;
+    padding-left: 10px;
+    margin: 12px 0;
+    line-height: 1;
+}
+
+.insurance-right .list li {
+    margin:0;
+       font-size: 15px;
+    line-height: 22px;
+}
+
+.insurance-right .list li:before {
+ top: 10px;   
+}
+.list > li:first-child {
+    margin-top: 0;
+}
+.list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 3px;
+    height: 3px;
+    background-color: #fff;
+}
+.list a {
+    color: #fff;
+}
+.list li.active {
+    font-weight: 700;
+    margin-left: 10px;
+}

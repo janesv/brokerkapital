@@ -1,0 +1,48 @@
+.container-base {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.b-inline {
+    display: inline-block;
+}
+.b-inline-center {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.g-line:before,
+.g-line:after {
+    content: " ";
+    display: table;
+}
+
+.g-line:after {
+    clear: both;
+}
+
+.g-line {
+    *zoom: 1;
+}
+
+.col-md-4 .b-inline-center{
+    display:none;
+}
+.col-md-4 .order-top-title{
+    margin:0;
+}
+.col-md-4 .form-line .form-group{
+    width:100%;
+}
+.col-md-4 .form-line .col-md-offset-4{
+    width:100%;
+    margin:0
+}
