@@ -1,0 +1,119 @@
+<!-- step 3 start -->
+
+<div class="css-cars-filter b-full-width-bg m0 mt30"
+     ng-class="'css-cars-filter--step-' + bigSteps.getBigStep().name"
+     style="font-size: 15px;">
+    <div class="p20" ng-init="data.showSteps = false">
+        <div ng-class="{'c-ct__progress__wrapper': getActiveStep().name !== 'casco_all'}">
+
+            <div class="c-ct__progress"
+                 ng-show="(getActiveStep().name !== 'casco_all' && bigSteps.getBigStep().name !== 'fourth') || (getActiveStep().name !== 'casco_all' && currentBrand.disable_discount)"><!--
+         ng-show="getActiveStep().name !== carFilterParams.brandSteps.first[0]"-->
+                <div class="c-ct__progress-line"
+                     ng-style="{'width': (getFullDiscount()/sumOfDiscounts * 100) + '%'}"></div>
+
+                <div class="c-ct__progress-title">
+                    <strong ng-if=  "!currentBrand.disable_discount">Скидка <span ng-bind="getFullDiscount()"></span>% на полис КАСКО</strong>
+                    <strong ng-if="currentBrand.disable_discount">{{getCurrentStepTitle()}}</strong>
+                </div>
+
+                <div class="c-ct__progress-discount"
+                     ng-if="!currentBrand.disable_discount">
+                    <span ng-bind="getCurrentDiscountTitle()"></span>
+                </div>
+            </div>
+
+            <!-- STEPS START -->
+            <div class="ui labels mt50 c-ct__steps-history"
+                 ng-init="data.showSteps = $root.currentBrand.alwaysShowHistory"
+                 ng-if="!$root.currentBrand.without_steps_history">
+
+                <span ng-repeat-start="(stepName, steps) in brandSteps"
+                      ng-init="$parentIndex = $index">
+
+                    <div class="ui label basic" ng-if="$parentIndex == 0 && !data.showSteps && getActiveStep().name !== 'casco_all'"
+                         ng-click="data.showSteps = !data.showSteps"><i class="caret left icon"></i> Назад
+                    </div>
+
+                    <div class="ui label basic" ng-if="$parentIndex == 0 && data.showSteps && getActiveStep().name !== 'casco_all'"
+                         ng-click="data.showSteps = $root.currentBrand.alwaysShowHistory; getPrevStep(getActiveStep().name)">
+                        <i class="caret left icon"></i> Назад
+                    </div>
+                </span>
+
+                <div class="ui label basic c-ct__steps-history__wrapper"
+                     ng-repeat-end
+                     ng-repeat="step in steps"
+                     ng-init="stepObj = getStepObjectByName(step)"
+                     ng-show="stepObj.getLabelTitle() && data.showSteps"
+                     ng-if="params.cascoParams.getBigStepIndex(bigSteps.getBigStep().name) >= $parentIndex">
+
+                        <span ng-if="bigSteps.getBigStep().name == stepName"
+                              ng-click="setActiveStep(step);showSteps = true"
+                              ng-bind="stepObj.getLabelTitle()">
+                        </span>
+
+                    <span ng-if="bigSteps.getBigStep().name != stepName"
+                          ng-click="bigSteps.setBigStep(stepName);setActiveStep(step);showSteps = true"
+                          ng-bind="stepObj.getLabelTitle()">
+                    </span>
+                </div>
+            </div>
+            <!-- STEPS END -->
+
+        </div>
+
+        <div ng-show="$root.currentBrand.without_casco_discount && bigSteps.getBigStep().name !== 'third'"
+             style="margin-bottom: -20px;"></div>
+
+        <div class="clearfix pos-rel">
+            <div class="c-ct__steps-wrapper"
+                 ng-class="{'c-ct__steps-wrapper--casco_all': getActiveStep().name !== 'casco_all'}">
+                <div ng-if="!params.resultsAreVisible || bigSteps.getBigStep().name !== 'third'"
+                     style="min-height: 300px">
+                    <car-filter cf-model-car-mark="calculation.car_mark"
+                                cf-model-car-model="calculation.car_model"
+                                cf-model-car-model-group="calculation.car_model_group"
+                                cf-model-car-cost="calculation.car_cost"></car-filter>
+                </div>
+
+                <div class="c-ct__top-panel"
+                     ng-if="params.resultsAreVisible && bigSteps.getBigStep().name === 'third'"
+                     ng-include="templates.program_list_manager"></div>
+
+
+
+                <div ng-include="templates.program_list"
+                     class="js-kasko-result"
+                     ng-show="params.resultsAreVisible && bigSteps.getBigStep().name === 'third'"
+                     ng-class=""></div>
+            </div>
+
+            <div class="w15p c-fl"
+                 ng-class="{'w85p': getActiveStep().name !== 'casco_all'}"
+                 ng-show="getActiveStep().name !== 'casco_all'">
+                <div class="c-ct__steps"
+                     ng-if="!currentBrand.without_big_steps_labels">
+                    <div class="c-ct__steps-item"
+                         ng-repeat="item in params.cascoParams.cascoBigSteps"
+                         data-tooltip="{{item.title}}"
+                         data-position="left center">
+                        <div class="ui huge icon button circular branded--second"
+                             ng-class="{
+                             green: params.cascoParams.getBigStepIndex(bigSteps.getBigStep().name) >= $index,
+                             active: params.cascoParams.getBigStepIndex(bigSteps.getBigStep().name) === $index,
+                             disabled: params.cascoParams.getBigStepIndex(bigSteps.getBigStep().name) < $index
+                            }"
+                             ng-click="bigSteps.setBigStep(item.name)">
+                            <i class="icon"
+                               ng-class="item.icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- step 3 end -->

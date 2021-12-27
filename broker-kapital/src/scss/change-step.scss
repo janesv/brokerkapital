@@ -1,0 +1,9 @@
+.c-change-step {
+  &--back {
+    color: #b3d5ef;
+    &:focus,
+    &:hover {
+      color: #9bc2e9;
+    }
+  }
+}

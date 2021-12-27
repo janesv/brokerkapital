@@ -1,0 +1,172 @@
+//.step.active {
+//  color: #4582b1 !important;
+//  .icon.file.text.outline {
+//    color: #4582b1 !important;
+//  }
+//  .icon.shopping.bag {
+//    color: #4582b1 !important;
+//  }
+//  .content {
+//    color: #4582b1 !important;
+//    .title {
+//      color: #4582b1 !important;
+//    }
+//  }
+//  .icon.options {
+//    color: #4582b1 !important;
+//  }
+//}
+
+.b-app {
+  .b-result-kasko_sum {
+    h3 span, h3 small {
+      font-size: 17px;
+    }
+  }
+
+  label{
+    width: auto;
+    float: none;
+  }
+
+  .icon.car{
+    height: 1em!important;
+  }
+
+  .ui.steps .step.active .title {
+    color: #b59e64;
+  }
+  .ui.steps .step.active .icon {
+    color: #b59e64;
+  }
+
+  i.inverted.branded.icon, i.inverted.circular.branded.icon {
+    background-color: #4a4a4a!important;
+    color: #fff!important;
+  }
+
+  /* Lable with steps  */
+  .ui.large.labels.branded {
+    .label {
+      color: whitesmoke;
+      background-color: #b59e64!important;
+      border: 1px solid #b59e64!important;
+      user-select: none;
+    }
+  }
+  /* main_buttons_color */
+  .ui.branded.button {
+    background-color: #b59e64;
+    color: #fff;
+    transition: all 0.4s ease;
+    text-shadow: none;
+    background-image: none;
+    &:focus,
+    &:hover {
+      background-color: #cac75c;
+    }
+    &:active {
+      background-color: #cac75c;
+    }
+  }
+}
+
+.c-ct__through-btn--branded {
+  background-color: #b59e64!important;
+}
+
+.c-ct-modal {
+  background-color: #fff!important;
+  padding-top: 45px;
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  border: none!important;
+  border-radius:0px!important;
+}
+.c-ct-modal.casco-calc {
+    margin-top:0px;
+}
+
+
+.c-ct__through-btn:hover ~ .c-ct__through-btn-tooltip{
+  display: block;
+}
+
+.c-ct__through-btn-tooltip {
+  display: none;
+  right: 115px;
+  color: white;
+  font-size: 16px;
+  line-height: 45px;
+  text-align: center;
+  height: 45px;
+  width: 200px;
+  border-radius: 4px;
+  background-color: #1B1C1D;
+  position: fixed;
+  bottom: 40px;
+  z-index: 10;
+}
+
+.c-ct__through-btn-tooltip:after {
+  right: -3%;
+  margin-top: 1.1rem;
+  transform: rotate(45deg) scale(1)!important;
+  content: '';
+  position: absolute;
+  font-size: 1rem;
+  border: 7px solid #1b1c1d;
+}
+
+.ui.green.buttons,
+.ui.green.button:active,
+.ui.green.buttons .button:active,
+.ui.green.button:hover,
+.ui.green.buttons .button:hover,
+.c-ct__promo-actions .ui.button{
+background-color: #b5a260;
+}
+
+.ui.green.active.button,
+.ui.green.button .active.button:active,
+.ui.green.buttons .active.button,
+.ui.green.buttons .active.button:active {
+  background-color: #b5a260;
+}
+
+.c-ct__progress-line {
+  background: -webkit-repeating-linear-gradient(135deg,#b5a260,#b5a260 13px,#fff -21px,#fff 30px);
+  background: repeating-linear-gradient(135deg,#b5a260,#b5a260 13px,#fff -21px,#fff 30px);
+}
+
+.c-ct__steps-history {
+ .ui.basic.label{
+   background-color: #b5a260;
+   color: #fff;
+ }
+}
+.c-ct__button,
+.c-ct__button--green,
+.c-ct__button--orange,
+.c-ct__button--orange.c-ct__button--active,
+.ui.teal.button,
+.ui.teal.buttons .button,
+.ui.teal.button:active,
+.ui.teal.buttons .button:active,
+.ui.teal.button:hover,
+.ui.teal.buttons .button:hover,
+.ui.green.button, .ui.green.buttons .button{
+  background-color: #b5a260!important;
+  color: #fff;
+}
+
+.b-app {
+  .ui.search {
+    margin-top: 0px;
+  }
+  .ui.icon {
+    width: unset;
+    height: unset;
+    margin-right: unset;
+  }
+}

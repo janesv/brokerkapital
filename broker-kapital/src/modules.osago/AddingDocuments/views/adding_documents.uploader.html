@@ -1,0 +1,142 @@
+<!--suppress ALL -->
+<div class="p20 mt10">
+    <div ng-class="{'b-disabled-block': isNotUpload}">
+        <div class="ui grid stackable">
+            <div class="row">
+                <div class="six wide column">
+                    <ul class="uploader-queue"
+                        nv-file-drop
+                        nv-file-over
+                        uploader="uploader"
+                        over-class="uploader-queue_over">
+
+                        <li ng-if="!uploader.queue.length">
+                            Для оформления полиса нужно загрузить файлы.
+                        </li>
+
+                        <li ng-repeat="item in uploader.queue" class="list-item animation-fade">
+                            <div ng-if="item._file.type.indexOf('image/') !== -1">
+                                <div ng-thumb="{ file: item._file, height: 70 }"></div>
+                            </div>
+
+                            <div ng-if="item._file.type === 'application/pdf'">
+                                <a href="{{item.file_url}}" target="_blank">
+                                    <img ng-src="{{params.images_path}}pdf.png" alt="{{item.description}}"
+                                         height="70"/>
+                                </a>
+                            </div>
+
+                            <div ng-if="item._file.type === 'application/msword' || isDocument(item._file.type)">
+                                <a href="{{item.file_url}}" target="_blank">
+                                    <img ng-src="{{params.images_path}}doc_icon.png" alt="{{item.description}}"
+                                         height="70"/>
+                                </a>
+                            </div>
+
+                            <div class="uploader-queue-actions">
+                                <button type="button"
+                                        ng-click="item.remove()"
+                                        class="button button-wrong">Удалить
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="control-row mt15">
+                        <input type="file"
+                               nv-file-select
+                               class="ui button"
+                               name="file"
+                               style="width: 100% !important;"
+                               uploader="uploader"
+                               multiple/>
+                        <h4>Выбрано: {{uploader.queue.length}}</h4>
+                    </div>
+
+                </div>
+
+                <div class="ten wide column">
+                    <h2 class="b-content_title m0">
+                        Подтверждаю загрузку минимального пакета документов
+                    </h2>
+
+                    <div class="b-full-width-bg" style="padding: 15px 0;margin-left: -15px;">
+                        <div class="p20">
+                            Для заполнения полиса добавьте сканы или фотографии ваших документов.
+                            Мы внесем эти данные и проверим их самостоятельно.
+                        </div>
+                    </div>
+
+                    <div class="b-uploader_confirmation-list">
+                        <div class="list-item mb5">
+                            <sem-checkbox ng-model="confirmationList.id_is_1"
+                                          sem-label="Копия паспорта Страхователя (Разворот паспорта с листом с пропиской)"
+                                          required="required"
+                                          id="id_is_1"
+                                          name="is_1">
+                            </sem-checkbox>
+                        </div>
+
+                        <div class="list-item mb5">
+                            <sem-checkbox ng-model="confirmationList.id_is_2"
+                                          sem-label="Копия паспорта Собственника (Разворот паспорта с листом с пропиской)"
+                                          required="required"
+                                          id="id_is_2"
+                                          name="is_2">
+                            </sem-checkbox>
+                        </div>
+
+                        <div class="list-item mb5">
+                            <sem-checkbox ng-model="confirmationList.id_is_4"
+                                          sem-label="Копия ПТС или свидетельство о регистрации (с двух сторон)"
+                                          required="required"
+                                          id="id_is_4"
+                                          name="is_4">
+                            </sem-checkbox>
+                        </div>
+
+                        <div class="list-item mb5">
+                            <sem-checkbox ng-model="confirmationList.id_is_7"
+                                          sem-label="Копия вод. удостоверений с обеих сторон всех водителей"
+                                          required="required"
+                                          id="id_is_7"
+                                          name="is_7">
+                            </sem-checkbox>
+                        </div>
+
+                        <div class="list-item mb5">
+                            <sem-checkbox ng-model="confirmationList.id_is_8"
+                                          sem-label="Копия диагностической карты с обеих сторон (если есть действующая)"
+                                          id="id_is_8"
+                                          name="is_8">
+                            </sem-checkbox>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt20 c-tar">
+        <button class="ui button"
+           ng-click="bigSteps.setBigStep('fourth')"
+           ng-bind="labels.save_data"
+           ya-metrika="m-save-docs-files"
+           ng-class="[
+           isSaveDataProgress && 'loading' || '',
+           (f_policy_step_3_form.$invalid || !uploader.queue.length) && 'disabled',
+            ($root.currentBrand.save_the_data_button || $root.currentBrand.main_buttons_color)]">
+        </button>
+    </div>
+
+
+
+    <div class="mt40" ng-if="errors.length">
+        <div class="ui error message">
+            <ul class="list">
+                <li ng-repeat="error in errors" ng-if="errors.length > 0"><span ng-bind="error"></span></li>
+            </ul>
+            <i class="close icon" ng-click="errors.length = 0;"></i>
+        </div>
+    </div>
+</div>

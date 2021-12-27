@@ -1,0 +1,286 @@
+<div ng-controller="policyOrderingCtrl" ng-form="ordering_form" class="is-form">
+  <div class="b-ordering m0">
+    <div class="ui grid stackable">
+      <div class="row">
+        <div class="eleven wide column">
+          <div class="b-ordering-block b-full-width-bg b-full-width-bg--green p30"
+               style="height: 100%"
+               ng-if="carInfo.carMark">
+            <h3 class="b-content_title m0">
+              Автомобиль
+            </h3>
+            
+            <h3 class="b-content_title p20 mt10">
+              <strong>
+                <span ng-bind="carInfo.carMark.title"></span>
+                <span ng-bind="carInfo.carModelGroup.title"></span>
+                <span ng-bind="carInfo.carModel.title"></span> —
+                <span ng-bind="calculation.car_manufacturing_year"></span> г. выпуска,
+                <span ng-bind="calculation.engine_power"></span> л.с.
+              </strong>
+            </h3>
+            
+            <h3 class="b-content_title mt30">
+              Водители:
+            </h3>
+            
+            <h3 class="b-content_title p20 mt10" ng-show="!calculation.is_multidrive">
+              <div ng-repeat="driver in calculation.driver_set">
+                <strong>Возраст - <span ng-bind="driver.age"></span>, стаж - <span ng-bind="driver.expirience"></span></strong>
+              </div>
+            </h3>
+            
+            <h3 class="b-content_title p20 mt10" ng-show="calculation.is_multidrive">
+              <div>
+                <strong>Минимальный возраст -
+                  <span ng-bind="calculation.drivers_minimal_age"></span>, минимальный стаж -
+                  <span ng-bind="calculation.drivers_minimal_experience"></span>
+                </strong>
+              </div>
+            </h3>
+            
+            <div class="b-ordering-block_icon">
+              <i class="icon info"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="five wide column">
+          <div class="b-full-width-bg b-ordering-block b-full-width-bg--red"
+               style="height: 100%"
+               ng-if="carFilterParams.selectedResult()">
+            
+            <h3 class="b-content_title m0">
+              Тип страхования: <strong class="ng-binding">Осаго</strong>
+            </h3>
+            <h3 class="b-content_title m0">
+              Выбранный страховой продукт:
+            </h3>
+            
+            <h3 class="b-content_title c-tar m0 mt10">
+              <div class="b-ordering_ins-company">
+                <strong ng-bind="carFilterParams.getCompanyTitle()"></strong>
+              </div>
+              <div class="mt5 b-ordering_price">
+                <strong>
+                  <span ng-bind="carFilterParams.selectedResult().program.sum
+                  | priceFormatter:0:'':false"></span>.
+                  <small ng-bind="carFilterParams.selectedResult().program.sum | fractionalFormatter:2"></small> р.
+                </strong>
+              </div>
+            </h3>
+            
+            <div class="b-ordering-block_icon">
+              <i class="icon calculator"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="eleven wide column">
+          <div class="b-full-width-bg b-ordering-block b-ordering-block--form">
+            <h3 class="b-content_title m0 mb20">
+              Введите данные для оформления заказа:
+            </h3>
+            
+            <form name="ordering_form">
+              <div class="ui form">
+                <div class="ui grid stackable two column">
+                  <div class="row"
+                       ng-if="!$root.currentBrand.with_sms">
+                    <div class="column">
+                      <div class="field">
+                        <label>Ваше имя:</label>
+                        <input type="text"
+                               ng-disabled="params.disableFormFields"
+                               ng-model="formFields.client_name"
+                               required/>
+                      </div>
+                    </div>
+                    
+                    <div class="column">
+                      <div class="field">
+                        <label>Ваш телефон:</label>
+                        <input type="text"
+                               ui-mask="+7 (999) 999-9999"
+                               required
+                               ng-disabled="params.disableFormFields"
+                               placeholder="+7 (___) ___-____"
+                               ng-model="formFields.client_phone"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="column">
+                      <div class="field">
+                        <label>
+                          Способ оплаты:
+                        </label>
+                        
+                        <div class="ui search selection dropdown"
+                             id="id_owner_registration"
+                             sem-dropdown
+                             ng-class="{disabled: params.disableFormFields}"
+                             ng-model="formFields.payment_type"
+                             sem-dropdown-simple="true"
+                             sem-dropdown-items="paymentType"></div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row one column">
+                    <div class="column">
+                      <div class="mt10">
+                        <sem-checkbox ng-model="formFields.receipt_type"
+                                      sem-label="{{params.deliveryTypeTitle}}"
+                                      sem-type="radio"
+                                      class="mr25"
+                                      ng-disabled="params.disableFormFields"
+                                      name="receipt_type"
+                                      value="delivery"></sem-checkbox>
+                        
+                        <sem-checkbox ng-model="formFields.receipt_type"
+                                      sem-label="Оформление в офисе"
+                                      ng-disabled="params.disableFormFields"
+                                      sem-type="radio"
+                                      name="receipt_type"
+                                      value="office"></sem-checkbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="ui grid"
+                     ng-if="formFields.receipt_type === 'delivery'">
+                  <div class="row one column pt0">
+                    <div class="column">
+                      <div class="field">
+                        <label for="id_delivery_address">
+                          Адрес доставки:
+                        </label>
+                        
+                        <input type="text"
+                               class="ui input"
+                               required
+                               ng-disabled="params.disableFormFields"
+                               id="id_delivery_address"
+                               ng-model="formFields.delivery_address"/>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row two column pt0">
+                    <div class="column">
+                      <div class="field"
+                           ng-class="{error: formFields.delivery_date && ordering_form.delivery_date.$invalid}">
+                        <label for="id_delivery_date">Дата доставки:</label>
+                        
+                        <div class="ui icon input">
+                          <input type="text"
+                                 jdatepicker
+                                 ng-disabled="params.disableFormFields"
+                                 jdatepicker-year-range="{{getYearRange(0, 0)}}"
+                                 jdatepicker-only-future="=true"
+                                 name="delivery_date"
+                                 placeholder="__.__.____"
+                                 id="id_delivery_date"
+                                 required
+                                 ng-model="formFields.delivery_date">
+                          <i class="icon calendar circular branded inverted"></i>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="column">
+                      <div class="field">
+                        <label for="id_delivery_time" ng-bind="params.deliveryTimeTitle"></label>
+                        
+                        <input type="text"
+                               class="ui input"
+                               required
+                               ng-disabled="params.disableFormFields"
+                               ng-model="formFields.delivery_time"
+                               id="id_delivery_time"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="ui grid"
+                     ng-if="formFields.receipt_type === 'office'">
+                  <div class="row two column pt0">
+                    <div class="column">
+                      <div class="field"
+                           ng-class="{error: formFields.arrival_date && ordering_form.arrival_date.$invalid}">
+                        <label for="id_arrival_date">
+                          Дата оформления:
+                        </label>
+                        
+                        <div class="ui icon input">
+                          <input type="text"
+                                 jdatepicker
+                                 jdatepicker-year-range="{{getYearRange(0, 0)}}"
+                                 jdatepicker-only-future="true"
+                                 ng-disabled="params.disableFormFields"
+                                 ng-disabled="params.disableFormFields"
+                                 name="arrival_date"
+                                 placeholder="__.__.____"
+                                 id="id_arrival_date"
+                                 required
+                                 ng-model="formFields.arrival_date">
+                          <i class="icon calendar circular branded inverted"></i>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="column" ng-if="!$root.currentBrand.arrival_time_is_hidden">
+                      <div class="field">
+                        <label for="id_arrival_time">Время оформления:</label>
+                        
+                        <input type="text"
+                               required
+                               ng-disabled="params.disableFormFields"
+                               ng-model="formFields.arrival_time"
+                               id="id_arrival_time"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+            <div class="b-ordering-block_icon">
+              <i class="icon write"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="five wide column">
+          <div class="b-ordering-block_submit b-full-width-bg b-ordering-block b-full-width-bg--grey">
+            
+            <button type="button" class="ui button" style="bottom: 70%;" ng-if="disableOrderBtn">
+              <a href="{{$root.currentBrand.calc_kasko_link}}">Рассчитать КАСКО</a>
+            </button>
+            <button type="button" class="ui button" style=" bottom: 55%;" ng-if="disableOrderBtn">
+              <a href="{{$root.currentBrand.calc_osago_link}}">Рассчитать ОСАГО</a>
+            </button>
+            
+            
+            <button type="button"
+                    ya-metrika="m-order"
+                    ng-click="sendPolicyOrdering()"
+                    ng-disabled="ordering_form.$invalid || policyOrderingInProgress || params.disableFormFields"
+                    ng-class="[policyOrderingInProgress ? 'loading' : '',
+                                ($root.currentBrand.order_the_policy_button || $root.currentBrand.main_buttons_color)]"
+                    class="ui button">
+              Заказать полис
+            </button>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

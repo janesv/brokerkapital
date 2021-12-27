@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/components/icon.min.css" />
+  <link rel="stylesheet"
+        href="./dist/css/style.css">
+  <link rel="stylesheet"
+        href="https://qostya.github.io/atomic-emmet/dist/style.css">
+
+  <title>Калькулятор КАСКО</title>
+</head>
+
+<body>
+
+  <div id="CascoApp">
+    <!--[if lte IE 9]><h2 class="c-tac">Ваш браузер устарел. Пожалуйста, обновите его до последней версии.</h2><![endif]-->
+
+    <div class="b-app"
+         ui-view
+         ng-class="'b-app--' + currentBrandName"></div>
+  </div>
+
+  <script charset="utf-8"
+          src="./config.js"></script>
+  <script charset="utf-8"
+          src="../common/vendors.min.js"></script>
+  <script charset="utf-8"
+          src="./dist/js/app.min.js"></script>
+
+  <script type="text/javascript">
+    (function () {
+
+      var id = getQueryParams().id;
+      setUrlHash();
+      startResizeListener();
+
+      angular.bootstrap(document.getElementById('CascoApp'), ['CascoApp']);
+
+      function startResizeListener() {
+        var frame = document.createElement('iframe');
+        frame.onload = () => {
+          frame.contentWindow.onresize = function () {
+            window.parent.postMessage(JSON.stringify({
+              event: 'resize',
+              data: {
+                offsetWidth: document.body.offsetWidth,
+                offsetHeight: document.body.offsetHeight + 50,
+                id: id
+              },
+            }), '*');
+          };
+        };
+        Object.assign(frame.style, {
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          right: '0',
+          bottom: '0',
+          visibility: 'hidden',
+          width: '100%',
+          height: '100%',
+          border: 'none',
+        });
+
+        document.body.style.position = 'relative';
+        document.body.appendChild(frame);
+      }
+
+      function setUrlHash() {
+        var targetHash = '#!/casco/';
+
+        if (window.location.hash.indexOf(targetHash) === -1) {
+          window.location.hash = targetHash;
+        }
+      }
+
+      function getQueryParams() {
+        try {
+          const url = new URL(window.location.href.replace('#/', ''));
+          const searchParams = new URLSearchParams(url.search.slice(1));
+          const params = {};
+          searchParams.forEach((value, key) => {
+            params[key] = value;
+          });
+          return params;
+        } catch (e) {
+          return {};
+        }
+      }
+    }());
+  </script>
+
+</body>
+
+</html>

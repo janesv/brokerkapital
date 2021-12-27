@@ -1,0 +1,30 @@
+.ui.form .field .ui.input input, .ui.form .fields .field .ui.input input {
+  height: auto;
+}
+
+.ui.form input:not([type]), .ui.form input[type="date"], .ui.form input[type="datetime-local"], .ui.form input[type="email"], .ui.form input[type="number"], .ui.form input[type="password"], .ui.form input[type="search"], .ui.form input[type="tel"], .ui.form input[type="time"], .ui.form input[type="text"], .ui.form input[type="url"], .ui.selection.dropdown, .ui.form textarea {
+  height: auto;
+}
+
+.b-app {
+  .content {
+    padding: 0 !important;
+  }
+  .b-steps .ui.steps .step {
+    height: 40px !important;
+  }
+  padding-bottom: 0 !important;
+}
+
+.ui.form .field .ui.input, .ui.form .fields .field .ui.input, .ui.form .wide.field .ui.input {
+  width: 100%;
+  height: auto !important;
+}
+
+.icon.icon-time, .icon.icon-info, .icon.icon-phone {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 10px !important;
+  width: 22px !important;
+  height: 22px !important;
+}
