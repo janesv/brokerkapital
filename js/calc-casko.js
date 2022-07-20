@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
     //Подгрузим форму
     $.ajax({
         type: "GET",
-        url: "/casco_form/forma_osago.html",
+        url: "https://janesv.github.io/casco_form/forma_osago.html",
         cache: false
     })
             .done(function (html) {
@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
                 //Подгрузим из файла список регионов проживания
                 $.ajax({
                     type: "GET",
-                    url: "/casco_form/regions.html",
+                    url: "https://janesv.github.io/casco_form/regions.html",
                     cache: false
                 })
                         .done(function (html) {
@@ -115,7 +115,7 @@ jQuery(document).ready(function ($) {
 
                     });
 
-                    // Если нет ошибок заполнения формы - отправка данных 
+                    // Если нет ошибок заполнения формы - отправка данных
                     if (!error) {
 
                         $('#osaga_form_submit').attr({'disabled': 'true', 'value': 'ОТПРАВКА ...'});
@@ -179,7 +179,7 @@ jQuery(document).ready(function ($) {
         //Подгрузим из файла список с тачками и моделями и разместим его в контейнер комбо-тачки
         $.ajax({
             type: "GET",
-            url: "/casco_form/tachki.html",
+            url: "https://janesv.github.io/casco_form/tachki.html",
             cache: false
         })
                 .done(function (html) {
@@ -189,7 +189,7 @@ jQuery(document).ready(function ($) {
         //Подгрузим из файла список регионов проживания
         $.ajax({
             type: "GET",
-            url: "/casco_form/regions.html",
+            url: "https://janesv.github.io/casco_form/regions.html",
             cache: false
         })
                 .done(function (html) {
@@ -199,7 +199,7 @@ jQuery(document).ready(function ($) {
         //Подгружаем список банков
         $.ajax({
             type: "GET",
-            url: "/casco_form/banks.html",
+            url: "https://janesv.github.io/casco_form/banks.html",
             cache: false
         })
                 .done(function (html) {
@@ -253,7 +253,7 @@ jQuery(document).ready(function ($) {
                     $('#bank-wrap').find('.error-box').hide();
                 }
             } else {
-                //	   			
+                //
             }
         })
 
@@ -385,7 +385,7 @@ jQuery(document).ready(function ($) {
 
             });
 
-            // Если нет ошибок заполнения формы - отправка данных 
+            // Если нет ошибок заполнения формы - отправка данных
             if (!error) {
 
                 $('#casco_form_submit').attr({'disabled': 'true', 'value': 'ОТПРАВКА ...'});
@@ -474,7 +474,7 @@ jQuery(document).ready(function ($) {
 //Подгрузим форму
     $.ajax({
         type: "GET",
-        url: "/casco_form/forma_avtocredit.html",
+        url: "https://janesv.github.io/casco_form/forma_avtocredit.html",
         cache: false
     })
             .done(function (html) {
@@ -484,7 +484,7 @@ jQuery(document).ready(function ($) {
                 //Подгрузим из файла список с тачками и моделями и разместим его в контейнер комбо-тачки
                 $.ajax({
                     type: "GET",
-                    url: "/casco_form/tachki.html",
+                    url: "https://janesv.github.io/casco_form/tachki.html",
                     cache: false
                 })
                         .done(function (html) {
@@ -494,7 +494,7 @@ jQuery(document).ready(function ($) {
                 //Подгрузим из файла список регионов проживания
                 $.ajax({
                     type: "GET",
-                    url: "/casco_form/regions.html",
+                    url: "https://janesv.github.io/casco_form/regions.html",
                     cache: false
                 })
                         .done(function (html) {
@@ -563,7 +563,7 @@ jQuery(document).ready(function ($) {
                         }
                     });
 
-                    // Если нет ошибок заполнения формы - отправка данных 
+                    // Если нет ошибок заполнения формы - отправка данных
                     if (!error) {
 
                         $('#avtocredit_form_submit').attr({'disabled': 'true', 'value': 'ОТПРАВКА ...'});
@@ -614,7 +614,7 @@ jQuery(document).ready(function ($) {
 // -------------  Форма имущество --------------
     $.ajax({
         type: "GET",
-        url: "/casco_form/forma_imushestvo.html",
+        url: "https://janesv.github.io/casco_form/forma_imushestvo.html",
         cache: false
     })
             .done(function (html) {
@@ -656,7 +656,7 @@ jQuery(document).ready(function ($) {
                         }
                     });
 
-                    // Если нет ошибок заполнения формы - отправка данных 
+                    // Если нет ошибок заполнения формы - отправка данных
                     if (!error) {
 
                         $('#imushestvo_form_submit').attr({'disabled': 'true', 'value': 'ОТПРАВКА ...'});
@@ -704,7 +704,7 @@ jQuery(document).ready(function ($) {
 
     $.ajax({
         type: "GET",
-        url: "/casco_form/forma_creditstory.html",
+        url: "https://janesv.github.io/casco_form/forma_creditstory.html",
         cache: false
     })
             .done(function (html) {
@@ -746,7 +746,7 @@ jQuery(document).ready(function ($) {
                         }
                     });
 
-                    // Если нет ошибок заполнения формы - отправка данных 
+                    // Если нет ошибок заполнения формы - отправка данных
                     if (!error) {
 
                         $('#creditstory_form_submit').attr({'disabled': 'true', 'value': 'ОТПРАВКА ...'});
@@ -821,7 +821,7 @@ jQuery(document).ready(function ($) {
         if (opened_flag) {
 
             //target.removeClass( "error" );
-            //target.find('.error-box').hide();	
+            //target.find('.error-box').hide();
 
             target.find('.combo-box').hide();
             target.find('.but').css('background', 'url(/casco_form/img/tri_down.png) no-repeat center');
@@ -872,7 +872,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-    //Если клацнули по элементу сгенерированного списка 
+    //Если клацнули по элементу сгенерированного списка
     $(document).on("click", target + " .combo-box span", function (event) {
         event.preventDefault();
 
@@ -887,7 +887,7 @@ jQuery(document).ready(function ($) {
             target.find('input').trigger('change'); //чтоб можно было программно отследить изменение инпута - генерит событе change
 
             $(this).parents('.combo-box > div > div').hide();
-            $(this).parents('.combo-box').find('div > div.' + id).show(); // Откроем список второго уровня вложенности	
+            $(this).parents('.combo-box').find('div > div.' + id).show(); // Откроем список второго уровня вложенности
 
 
         } else {
@@ -898,7 +898,7 @@ jQuery(document).ready(function ($) {
             target.find('input').trigger('change'); //чтоб можно было программно отследить изменение инпута - генерит событе change
 
             $(target).find('.combo-box').hide();
-            $(target).find('.but').css('background', 'url(/casco_form/img/tri_down.png) no-repeat center');
+            $(target).find('.but').css('background', 'url(https://janesv.github.io/casco_form/img/tri_down.png) no-repeat center');
             value = '';
             opened_flag = false;
 
@@ -914,7 +914,7 @@ jQuery(document).ready(function ($) {
     jQuery(document).on('click', '.js-calc-form-button', calcButtonTapped);
     jQuery(document).on('click', '.js-order-form-button', orderButtonTapped);
     jQuery(document).on('click', '.js-back-button', backButtonTapped);
-     
+
     function calcButtonTapped() {
         yaCounter35210840.reachGoal('kasko2');
         jQuery('.kasko-buttons.row').hide();
@@ -922,7 +922,7 @@ jQuery(document).ready(function ($) {
         jQuery('.js-back-button').show();
         jQuery('#kasko-calc-form').show();
     }
-    
+
     function orderButtonTapped() {
 
         jQuery('.kasko-buttons.row').hide();
@@ -930,12 +930,12 @@ jQuery(document).ready(function ($) {
         jQuery('.js-back-button').show();
         jQuery('#kasko-order-form').show();
     }
-    
+
     function backButtonTapped() {
-       
+
         jQuery('#kasko-examples-form').show();
         jQuery('.kasko-buttons.row').show();
-        
+
         jQuery('.js-back-button').hide();
         jQuery('#kasko-order-form').hide();
         jQuery('#kasko-calc-form').hide();
