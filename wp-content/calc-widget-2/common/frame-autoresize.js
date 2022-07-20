@@ -28,5 +28,5 @@
     
     selfScript.parentNode.insertBefore(frame, selfScript);
     
-    frame.setAttribute('src', 'https://janesv.github.io/calc-widget-2/broker-kapital/index-casco.html?id=' + id);
+    frame.setAttribute('src', 'https://janesv.github.io/wp-content/calc-widget-2/broker-kapital/index-casco.html?id=' + id);
 })();
