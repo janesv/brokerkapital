@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @author Samigullin Kamil <feedback@kamilsk.com>
+ * @link http://www.kamilsk.com/
+ *
+ * Basic example of working with library from CLI.
+ */
+
+use OctoLab\amoCRM\core\cli\ExampleCommand;
+use Symfony\Component\Console\Application;
+
+require __DIR__ . '/API.php';
+
+$app->register('query', array(
+		'url' => 'https://example.amocrm.ru',
+		'user' => 'user@example.com',
+		'token' => 'd41d8cd98f00b204e9800998ecf8427e',
+	))
+	->addLoader('Symfony\Component\Console', __DIR__ . '/vendor/Console');
+
+$cli = new Application();
+$cli->add(new ExampleCommand());
+$cli->run();
