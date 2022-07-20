@@ -1,0 +1,349 @@
+
+<!-- saved from url=(0049)http://finalliance.ru/casco_form/forma_osago.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head><body><div>
+	<!--p id="tit">КАСКО со скидкой 10%</p-->
+	<form id="osaga_form" method="post" action="http://finalliance.ru/casco_form/forma_osago.html">
+		
+		<div class="frow" style="padding-top:0;">
+
+			<div class="box bt">
+				<label>Тип транспортного средства</label>		
+				<div id="type-wrap" class="wrap required visi has-dropdown">
+					<input class="i" name="pole[type]" type="text" placeholder="Легковой автомобиль" value="Легковой автомобиль" readonly="">
+					<div class="but"></div>
+					<div id="type_trans" class="combo-box">
+						<div>
+							<div>
+								<span>Легковой автомобиль</span>
+								<span>Такси</span>
+								<span>Маршрутное такси</span>
+								<span>Грузовой автомобиль до 16 т</span>
+								<span>Грузовой автомобиль свыше 16 т</span>
+								<span>Мотоциклы и мотороллеры</span>
+								<span>Автобус до 20 мест</span>
+								<span>Автобус свыше 20 мест</span>
+								<span>Прицепы к грузовым автомобилям</span>
+								<span>Троллейбусы</span>
+								<span>Трамваи</span>
+								<span>Тракторы</span>
+								<span>Прицепы к тракторам</span>
+							</div>
+						</div>	
+					</div>
+					<div class="error-box">Поле обязательно для заполнения.</div>
+				</div>
+			</div>		
+
+
+			<div class="box">
+				<label>Мощность двигателя</label>
+				<div id="moshn-wrap" class="wrap has-dropdown">
+					<input class="i" type="text" name="pole[moshnost]" value="от 100 до 120 л.с. включительно" placeholder="от 100 до 120 л.с. включительно" readonly="">
+					<div class="but"></div>
+					<div id="moshn" class="combo-box">
+						<div>
+							<div>
+								<span>до 50 л.с.</span>
+								<span>от 50 до 70 л.с.</span>
+								<span>от 70 до 100 л.с.</span>
+								<span>от 100 до 120 л.с.</span>
+								<span>от 120 до 150 л.с.</span>
+								<span>свыше 150 л.с.</span>
+							</div>
+						</div>
+					</div>				
+				</div>
+				
+			</div>
+
+		</div>
+
+		<div class="separator"></div>
+		<div class="frow">
+
+			<div class="box">
+				<label>�&nbsp;егион регистрации авто</label>
+				<div id="region3-wrap" class="wrap has-dropdown">
+					<input class="i" type="text" name="pole[region3]" placeholder="Регион проживания" value="Воронежская обл." readonly="">
+					<div class="but"></div>
+					<div id="regions3" class="combo-box"></div>
+				</div>
+			</div>
+
+			
+
+		</div>
+		
+		<div class="separator"></div>
+		
+		<div class="frow">	
+
+			
+			<div class="box">
+				<label>Период использования в течение года</label>
+				<div id="period-wrap" class="wrap has-dropdown">
+					<input class="i" type="text" name="pole[period]" placeholder="10 месяцев и более" value="10 месяцев и более" readonly="">
+					<div class="but"></div>
+					<div id="period" class="combo-box">
+						<div>
+							<div>
+								<span>3 месяца</span>
+								<span>4 месяца</span>
+								<span>5 месяцев</span>
+								<span>6 месяцев</span>
+								<span>7 месяцев</span>
+								<span>8 месяцев</span>
+								<span>9 месяцев</span>
+								<span>10 месяцев и более</span>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="separator"></div>
+
+		<div class="frow">	
+			<div class="box">
+				<label>Допущенные к управлению водители</label>
+				<div class="radio-box">
+					<div class="radio-item">
+						<input id="ogr" type="radio" name="pole[krug]" maxlength="2" value="Ограниченный круг" checked=""><label for="ogr"><span></span>Ограниченный круг</label>&nbsp;
+					</div>
+					<div class="radio-item">
+						<input id="bezogr" type="radio" name="pole[krug]" maxlength="2" value="Без ограничений"><label for="bezogr"><span></span>Без ограничений</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="separator"></div>
+
+		<div class="frow">	
+			<div class="box">
+				<label>Минимальный возраст водителей</label>
+				<div class="radio-box">
+					<div class="radio-item">
+						<input id="do22" type="radio" name="pole[age]" maxlength="2" value="До 22 лет включительно"><label for="do22"><span></span>До 22 лет включительно</label>&nbsp;
+					</div>	
+					<div class="radio-item">
+						<input id="bolee22" type="radio" name="pole[age]" maxlength="2" value="Старше 22 лет" checked=""><label for="bolee22"><span></span>Старше 22 лет</label>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<!--div class="separator"></div-->
+
+		<div class="frow" style="margin-top: 10px;">	
+			<div class="box">
+				<label>Минимальный водительский стаж</label>
+				<div class="radio-box">
+					<div class="radio-item">
+						<input id="do3" type="radio" name="pole[stag]" maxlength="2" value="До 3-х лет включительно"><label for="do3"><span></span>До 3-х лет включительно</label>&nbsp;	
+					</div>	
+					<div class="radio-item">
+						<input id="bolee3" type="radio" name="pole[stag]" maxlength="2" value="Свыше 3-х лет" checked=""><label for="bolee3"><span></span>Свыше 3-х лет</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="separator"></div>
+
+		<!--div class="frow use_osago">	
+			<div class="left-wrap">
+				<div class="box">
+					<label style="margin-bottom: 10px;">Текущий год использования ОСАГО</label>
+					<div id="ispolz-wrap" class="wrap has-dropdown">
+						<input id="god_ispolz" class="i" type="text" name="pole[god_ispolz]" value="Первый" placeholder="Первый" readonly/>
+						<div class="but"></div>
+						<div id="ispolz" class='combo-box'>
+							<div>
+								<div>
+									<span>Первый</span>
+									<span>Второй</span>
+									<span>Третий</span>
+									<span>Четвертый</span>
+									<span>Пятый</span>
+									<span>Шестой</span>
+									<span>Седьмой</span>
+									<span>Восьмой</span>
+									<span>Девятый</span>
+									<span>Десятый</span>
+								</div>
+							</div>
+						</div>
+					</div>		
+				</div>
+			</div>
+
+			<div class="right-wrap">
+				
+
+				<div id="g1" class="god_item vrow" style="margin-top: 0;">					
+					<div class="title-line"><label style="margin-bottom: 10px;">Число страховых случаев ОСАГО</label></div>
+					<div class="radio-box">							
+						<label class="rname">1-й год:</label>
+						<div class="businki">						
+							<input id="g1-1" type="radio" name="pole[g1]" value="0" checked><label class="ml" for="g1-1"><span></span>0</label>&nbsp;
+							<input id="g1-2" type="radio" name="pole[g1]" value="1"><label class="ml" for="g1-2"><span></span>1</label>
+							<input id="g1-3" type="radio" name="pole[g1]" value="2"><label class="ml" for="g1-3"><span></span>2</label>
+							<input id="g1-4" type="radio" name="pole[g1]" value="3"><label class="ml" for="g1-4"><span></span>3</label>
+							<input id="g1-5" type="radio" name="pole[g1]" value="4+"><label class="ml" for="g1-5"><span></span>4+</label>
+						</div>
+						
+					</div>
+				</div>
+
+				<div id="g2" class="god_item vrow">					
+					<div class="radio-box">
+						<label class="rname">2-й год:</label>
+						<div class="businki">						
+							<input id="g2-1" type="radio" name="pole[g2]" value="0" checked><label class="ml" for="g2-1"><span></span>0</label>&nbsp;
+							<input id="g2-2" type="radio" name="pole[g2]" value="1"><label class="ml" for="g2-2"><span></span>1</label>
+							<input id="g2-3" type="radio" name="pole[g2]" value="2"><label class="ml" for="g2-3"><span></span>2</label>
+							<input id="g2-4" type="radio" name="pole[g2]" value="3"><label class="ml" for="g2-4"><span></span>3</label>
+							<input id="g2-5" type="radio" name="pole[g2]" value="4+"><label class="ml" for="g2-5"><span></span>4+</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="g3" class="god_item vrow">					
+					<div class="radio-box">
+						<label class="rname">3-й год:</label> 
+						<div class="businki">
+							<input id="g3-1" type="radio" name="pole[g3]" value="0" checked><label class="ml" for="g3-1"><span></span>0</label>&nbsp;
+							<input id="g3-2" type="radio" name="pole[g3]" value="1"><label class="ml" for="g3-2"><span></span>1</label>
+							<input id="g3-3" type="radio" name="pole[g3]" value="2"><label class="ml" for="g3-3"><span></span>2</label>
+							<input id="g3-4" type="radio" name="pole[g3]" value="3"><label class="ml" for="g3-4"><span></span>3</label>
+							<input id="g3-5" type="radio" name="pole[g3]" value="4+"><label class="ml" for="g3-5"><span></span>4+</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="g4" class="god_item vrow">					
+					<div class="radio-box">
+						<label class="rname">4-й год:</label>
+						<div class="businki">
+							<input id="g4-1" type="radio" name="pole[g4]" value="0" checked><label class="ml" for="g4-1"><span></span>0</label>&nbsp;
+							<input id="g4-2" type="radio" name="pole[g4]" value="1"><label class="ml" for="g4-2"><span></span>1</label>
+							<input id="g4-3" type="radio" name="pole[g4]" value="2"><label class="ml" for="g4-3"><span></span>2</label>
+							<input id="g4-4" type="radio" name="pole[g4]" value="3"><label class="ml" for="g4-4"><span></span>3</label>
+							<input id="g4-5" type="radio" name="pole[g4]" value="4+"><label class="ml" for="g4-5"><span></span>4+</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="g5" class="god_item vrow">					
+					<div class="radio-box">
+						<label class="rname">5-й год:</label>
+						<div class="businki">
+							<input id="g5-1" type="radio" name="pole[g5]" value="0" checked><label class="ml" for="g5-1"><span></span>0</label>&nbsp;
+							<input id="g5-2" type="radio" name="pole[g5]" value="1"><label class="ml" for="g5-2"><span></span>1</label>
+							<input id="g5-3" type="radio" name="pole[g5]" value="2"><label class="ml" for="g5-3"><span></span>2</label>
+							<input id="g5-4" type="radio" name="pole[g5]" value="3"><label class="ml" for="g5-4"><span></span>3</label>
+							<input id="g5-5" type="radio" name="pole[g5]" value="4+"><label class="ml" for="g5-5"><span></span>4+</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="g6" class="god_item vrow">					
+					<div class="radio-box">
+						<label class="rname">6-й год:</label>
+						<div class="businki">
+							<input id="g6-1" type="radio" name="pole[g6]" value="0" checked><label class="ml" for="g6-1"><span></span>0</label>&nbsp;
+							<input id="g6-2" type="radio" name="pole[g6]" value="1"><label class="ml" for="g6-2"><span></span>1</label>
+							<input id="g6-3" type="radio" name="pole[g6]" value="2"><label class="ml" for="g6-3"><span></span>2</label>
+							<input id="g6-4" type="radio" name="pole[g6]" value="3"><label class="ml" for="g6-4"><span></span>3</label>
+							<input id="g6-5" type="radio" name="pole[g6]" value="4+"><label class="ml" for="g6-5"><span></span>4+</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="g7" class="god_item vrow">					
+					<div class="radio-box">
+						<label class="rname">7-й год:</label>
+						<div class="businki">
+							<input id="g7-1" type="radio" name="pole[g7]" value="0" checked><label class="ml" for="g7-1"><span></span>0</label>&nbsp;
+							<input id="g7-2" type="radio" name="pole[g7]" value="1"><label class="ml" for="g7-2"><span></span>1</label>
+							<input id="g7-3" type="radio" name="pole[g7]" value="2"><label class="ml" for="g7-3"><span></span>2</label>
+							<input id="g7-4" type="radio" name="pole[g7]" value="3"><label class="ml" for="g7-4"><span></span>3</label>
+							<input id="g7-5" type="radio" name="pole[g7]" value="4+"><label class="ml" for="g7-5"><span></span>4+</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="g8" class="god_item vrow">					
+					<div class="radio-box">
+						<label class="rname">8-й год:</label>
+						<div class="businki">
+							<input id="g8-1" type="radio" name="pole[g8]" value="0" checked><label class="ml" for="g8-1"><span></span>0</label>&nbsp;
+							<input id="g8-2" type="radio" name="pole[g8]" value="1"><label class="ml" for="g8-2"><span></span>1</label>
+							<input id="g8-3" type="radio" name="pole[g8]" value="2"><label class="ml" for="g8-3"><span></span>2</label>
+							<input id="g8-4" type="radio" name="pole[g8]" value="3"><label class="ml" for="g8-4"><span></span>3</label>
+							<input id="g8-5" type="radio" name="pole[g8]" value="4+"><label class="ml" for="g8-5"><span></span>4+</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="g9" class="god_item vrow">					
+					<div class="radio-box">
+						<label class="rname">9-й год:</label>
+						<div class="businki">
+							<input id="g9-1" type="radio" name="pole[g9]" value="0" checked><label class="ml" for="g9-1"><span></span>0</label>&nbsp;
+							<input id="g9-2" type="radio" name="pole[g9]" value="1"><label class="ml" for="g9-2"><span></span>1</label>
+							<input id="g9-3" type="radio" name="pole[g9]" value="2"><label class="ml" for="g9-3"><span></span>2</label>
+							<input id="g9-4" type="radio" name="pole[g9]" value="3"><label class="ml" for="g9-4"><span></span>3</label>
+							<input id="g9-5" type="radio" name="pole[g9]" value="4+"><label class="ml" for="g9-5"><span></span>4+</label>
+						</div>
+					</div>
+				</div>				
+				
+				
+			</div>
+
+		</div>
+		
+		<div class="separator"></div-->
+
+		<div class="frow">	
+			<div class="box bt">
+				<label>Как вас зовут</label>
+				<div id="name-wrap" class="wrap">
+					<input class="i" id="your_name" type="text" name="pole[your_name]" value="" placeholder="">
+					
+				</div>
+			</div>
+
+			<div class="box bt">
+				<label>Контактный телефон</label>
+				<div id="phone-wrap" class="wrap required visi">
+					<input class="i" id="phone" type="text" name="pole[your_phone]" value="" placeholder="+7 (___) ___-____">
+					<div class="error-box">Поле обязательно для заполнения.</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<label>Ваш E-mail</label>
+				<div id="email-wrap" class="wrap">
+					<input class="i" id="email" type="text" name="pole[your_email]" value="" placeholder="">
+				</div>
+			</div>
+		</div>
+
+		<div class="separator"></div>
+
+		<div class="frow" style="text-align: center; margin-top: -15px;"> 	
+			<div class="box">
+				<input type="hidden" name="pole[submit]" value="osago">
+				<input type="submit" class="submit-button" id="osaga_form_submit" value="Отправить">				
+			</div>
+		</div>
+		<div id="mail_success"><span>Спасибо, ваши данные приняты!</span></div>
+		<div id="mail_fail"><span>Ошибка отправки данных на север!</span></div>
+	</form>
+</div></body></html>

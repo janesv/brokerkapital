@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><div>
+	<!--p id="tit">КАСКО со скидкой 10%</p-->
+	<form id="creditstory_form" method="post">
+		
+			
+		<div class="frow">	
+			<div class="box bt">
+				<label>Как вас зовут</label>
+				<div id="name-wrap" class="wrap">
+					<input class="i" id="your_name" type="text" name="pole[your_name]" value="" placeholder="">
+					
+				</div>
+			</div>
+
+			<div class="box bt">
+				<label>Контактный телефон</label>
+				<div id="phone-wrap" class="wrap required visi">
+					<input class="i" id="phone" type="text" name="pole[your_phone]" value="" placeholder="+7 (___) ___-____">
+					<div class="error-box">Поле обязательно для заполнения.</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<label>Ваш E-mail</label>
+				<div id="email-wrap" class="wrap">
+					<input class="i" id="email" type="text" name="pole[your_email]" value="" placeholder="">
+				</div>
+			</div>
+		</div>
+
+		<div class="separator"></div>
+
+		<div class="frow" style="text-align: center; margin-top: -15px;"> 	
+			<div class="box">
+				<input type="hidden" name="pole[submit]" value="creditstory">
+				<input type="submit" id="creditstory_form_submit" class="submit-button" value="Отправить">
+			</div>
+		</div>
+		<div id="mail_success"><span>Спасибо ваша заявка принята!</span></div>
+		<div id="mail_fail"><span>Ошибка отправки данных на север!</span></div>
+	</form>
+</div></body></html>

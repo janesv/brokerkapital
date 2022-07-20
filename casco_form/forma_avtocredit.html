@@ -1,0 +1,154 @@
+
+<!-- saved from url=(0054)http://finalliance.ru/casco_form/forma_avtocredit.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head><body><div>
+	<!--p id="tit">КАСКО со скидкой 10%</p-->
+	<form id="avtocredit_form" method="post" action="http://finalliance.ru/casco_form/casco/send.php">
+		
+		<div class="frow">	
+			<div class="box">
+				<label>Стоимость автомобиля</label>
+				<div id="price-wrap" class="wrap">
+					<input class="i num" id="price" type="text" name="pole[price]" value="" placeholder="100000">					
+				</div>
+				<div id="rub-wrap">руб.</div>
+				<div id="slider-wrap">
+					<div class="shkala"><i class="s1">0</i></div><div class="shkala"><i class="s2">500 т.</i></div>
+					<div class="shkala"><i class="s3">1 млн.</i></div><div class="shkala"><i class="s4">1.5 млн.</i><i class="s5">&#8734;</i></div>
+					<div id="price-slider"></div>
+				</div>
+			</div>
+
+			<div class="box w1">
+				<label>Первоначальный взнос</label>
+				<div id="price-wrap" class="wrap">
+					<input class="i num" id="vznos" type="text" name="pole[vznos]" value="" placeholder="100000">					
+				</div>
+				<div id="rub-wrap">руб.</div>				
+			</div>
+
+		</div>
+
+		<div class="separator"></div>		
+
+		<div class="frow" style="padding-top:0;">
+			<div class="box bt">
+				<label>Срок кредита</label>
+				<div id="srok-wrap" class="wrap has-dropdown">		
+					<input id="srok" class="i" type="text" name="pole[srok]" value="1 год" placeholder="1 год" readonly="">
+					<div class="but"></div>
+					<div class="combo-box">
+						<div>
+							<div>
+								<span>6 месяцев</span>
+								<span>1 год</span>
+								<span>2 года</span>
+								<span>3 года</span>
+								<span>4 года</span>
+								<span>5 лет</span>
+								<span>6 лет</span>
+								<span>7 лет</span>
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="radio-box">
+					<input id="new" type="radio" name="pole[new]" maxlength="2" value="Новый" checked=""><label class="ml" for="new"><span></span>Новый</label>&nbsp;					
+					<input id="old" type="radio" name="pole[new]" maxlength="2" value="С пробегом"><label class="ml" for="old"><span></span>С пробегом</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="separator"></div>
+
+		<div class="frow" style="padding-top:0;">
+
+			<div class="box bt">
+				<label>Марка и модель автомобиля</label>		
+				<div id="tachka-wrap" class="wrap visi has-dropdown">
+					<input class="i" name="pole[tachka]" type="text" placeholder="Выберите марку автомобиля" readonly="">
+					<div class="but"></div>
+					<div id="tachki" class="combo-box"></div>
+					<div class="error-box">Поле обязательно для заполнения.</div>
+				</div>
+			</div>
+
+			<div class="box bt">
+				<label>Год выпуска</label>
+				<div id="god-wrap" class="wrap has-dropdown">		
+					<input id="godi" class="i num" type="text" name="pole[god]" value="2017" placeholder="2017" readonly="">
+					<div class="but"></div>
+					<div id="year" class="combo-box">
+						<div>
+							<div>
+								<span>2017</span>
+								<span>2016</span>
+								<span>2015</span>
+								<span>2014</span>
+								<span>2013</span>
+								<span>2012</span>
+								<span>2011</span>
+								
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="separator"></div>		
+		
+		<div class="frow">	
+			<div class="box">
+				<label>�&nbsp;егион проживания</label>
+				<div id="region-wrap" class="wrap has-dropdown">
+					<input class="i" type="text" name="pole[region]" placeholder="Регион проживания" value="Воронежская обл." readonly="">
+					<div class="but"></div>
+					<div id="regions" class="combo-box"></div>
+				</div>
+			</div>
+		</div>	
+		
+		<div class="separator"></div>
+		
+	
+		<div class="frow">	
+			<div class="box bt">
+				<label>Как вас зовут</label>
+				<div id="name-wrap" class="wrap">
+					<input class="i" id="your_name" type="text" name="pole[your_name]" value="" placeholder="">
+					
+				</div>
+			</div>
+
+			<div class="box bt">
+				<label>Контактный телефон</label>
+				<div id="phone-wrap" class="wrap required visi">
+					<input class="i" id="phone" type="text" name="pole[your_phone]" value="" placeholder="+7 (___) ___-____">
+					<div class="error-box">Поле обязательно для заполнения.</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<label>Ваш E-mail</label>
+				<div id="email-wrap" class="wrap">
+					<input class="i" id="email" type="text" name="pole[your_email]" value="" placeholder="">
+				</div>
+			</div>
+		</div>
+
+		<div class="separator"></div>
+
+		<div class="frow" style="text-align: center; margin-top: -15px;"> 	
+			<div class="box">
+				<input type="hidden" name="pole[submit]" value="avtocredit">
+				<input type="submit" id="avtocredit_form_submit" class="submit-button" value="Отправить заявку">
+			</div>
+		</div>
+		<div id="mail_success"><span>Спасибо ваша заявка принята!</span></div>
+		<div id="mail_fail"><span>Ошибка отправки данных на север!</span></div>
+	</form>
+</div></body></html>
